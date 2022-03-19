@@ -30,8 +30,8 @@ module Jekyll
       SecureRandom.hex(@n)
     end
   end
+
+  info { "Loaded jekyll_random_hex plugin." }
 end
 
 Liquid::Template.register_tag("random_hex_string", Jekyll::RandomNumberTag)
-
-Jekyll.info "Loaded jekyll_random_hex plugin."

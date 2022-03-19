@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     jekyll_random_hex (1.0.0)
-      jekyll
+      jekyll (>= 3.5.0)
       jekyll_plugin_logger
 
 GEM
@@ -121,7 +121,6 @@ PLATFORMS
 DEPENDENCIES
   bundler
   debase
-  jekyll (>= 3.5)
   jekyll_random_hex!
   rake (~> 13.0)
   rspec
