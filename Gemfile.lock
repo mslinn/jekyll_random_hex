@@ -122,7 +122,7 @@ DEPENDENCIES
   bundler
   debase
   jekyll_random_hex!
-  rake (~> 13.0)
+  rake
   rspec
   rubocop (= 1.18.0)
   rubocop-jekyll
@@ -131,4 +131,4 @@ DEPENDENCIES
   ruby-debug-ide
 
 BUNDLED WITH
-   2.3.8
+   2.3.7

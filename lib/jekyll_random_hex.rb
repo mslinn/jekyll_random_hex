@@ -3,7 +3,6 @@
 require "jekyll"
 require "jekyll_plugin_logger"
 require "securerandom"
-require_relative "jekyll_random_hex/version"
 
 module Jekyll
   class RandomNumberTag < Liquid::Tag
