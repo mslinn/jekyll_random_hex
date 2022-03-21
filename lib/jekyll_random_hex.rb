@@ -3,6 +3,11 @@
 require "jekyll"
 require "jekyll_plugin_logger"
 require "securerandom"
+require_relative "jekyll_random_hex/version"
+
+module JekyllPluginRandomNumberTagName
+  PLUGIN_NAME = "random_hex_string"
+end
 
 module Jekyll
   class RandomNumberTag < Liquid::Tag
@@ -29,8 +34,8 @@ module Jekyll
       SecureRandom.hex(@n)
     end
   end
-
-  info { "Loaded jekyll_random_hex plugin." }
 end
 
-Liquid::Template.register_tag("random_hex_string", Jekyll::RandomNumberTag)
+Jekyll.info { "Loaded #{JekyllPluginRandomNumberTagName::PLUGIN_NAME} v#{JekyllRandomHex::VERSION} plugin." }
+
+Liquid::Template.register_tag(JekyllPluginRandomNumberTagName::PLUGIN_NAME, Jekyll::RandomNumberTag)
