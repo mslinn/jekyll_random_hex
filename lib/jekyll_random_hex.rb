@@ -36,6 +36,6 @@ module Jekyll
   end
 end
 
-Jekyll.info { "Loaded #{JekyllPluginRandomNumberTagName::PLUGIN_NAME} v#{JekyllRandomHex::VERSION} plugin." }
+PluginMetaLogger.instance.info { "Loaded #{JekyllPluginRandomNumberTagName::PLUGIN_NAME} v#{JekyllRandomHex::VERSION} plugin." }
 
 Liquid::Template.register_tag(JekyllPluginRandomNumberTagName::PLUGIN_NAME, Jekyll::RandomNumberTag)
