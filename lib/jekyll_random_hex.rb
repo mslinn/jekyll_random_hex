@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "jekyll_plugin_logger"
 require "liquid"
 require "securerandom"
 require_relative "jekyll_random_hex/version"
