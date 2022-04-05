@@ -17,6 +17,16 @@ class RandomNumberTag < Liquid::Tag
   # @return [String, nil] Describe the return value
   def initialize(tag_name, text, context)
     super
+    compute_random text
+  end
+
+  def render(_)
+    SecureRandom.hex(@n)
+  end
+
+  private
+
+  def compute_random(text)
     text.to_s.strip!
     if text.empty?
       @n = 6
@@ -28,12 +38,8 @@ class RandomNumberTag < Liquid::Tag
       @n = text.to_i
     end
   end
-
-  def render(_)
-    SecureRandom.hex(@n)
-  end
 end
 
-PluginMetaLogger.instance.info { "Loaded #{JekyllPluginRandomNumberTagName::PLUGIN_NAME} v#{JekyllRandomHex::VERSION} plugin." }
+PluginMetaLogger.instance.info { "Loaded #{JekyllPluginRandomNumberTagName::PLUGIN_NAME} v#{JekyllRandomHexVersion::VERSION} plugin." }
 
 Liquid::Template.register_tag(JekyllPluginRandomNumberTagName::PLUGIN_NAME, RandomNumberTag)
