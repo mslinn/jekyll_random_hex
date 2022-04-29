@@ -10,16 +10,18 @@ module JekyllPluginRandomNumberTagName
 end
 
 class RandomNumberTag < Liquid::Tag
-  # Called by Jekyll only once to register the module.
-  # @param tag_name [String] Describe this parameter's purpose
-  # @param text [String] Describe this parameter's purpose
-  # @param context [String] Describe this parameter's purpose
-  # @return [String, nil] Describe the return value
+  # Called by Jekyll only once to register the tag.
+  # @param tag_name [String] is the name of the tag, which we already know.
+  # @param argument_string [String] the arguments from the web page.
+  # @param tokens [Liquid::ParseContext] tokenized command line
+  # @return [void]
   def initialize(tag_name, text, context)
     super
     compute_random text
   end
 
+  # @param _ [Liquid::Context]
+  # @return [String]
   def render(_)
     SecureRandom.hex(@n)
   end
