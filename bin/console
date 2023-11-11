@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 
-require "fileutils"
-
-require "bundler/setup"
-require "irb"
-require "jekyll_random_hex"
-require "liquid"
+require 'bundler/setup'
+require 'fileutils'
+require 'irb'
+require 'liquid'
+require_relative '../lib/jekyll_random_hex'
 
 IRB.start(__FILE__)
